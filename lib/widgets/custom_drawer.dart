@@ -1,3 +1,4 @@
+import 'package:crop_mapping_app/screens/crop_map_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../screens/add_new_place_screen.dart';
@@ -47,7 +48,7 @@ class CustomDrawer extends StatelessWidget {
             Icon(Icons.location_city, color: Theme.of(context).primaryColor, size: 50),
             context,
             () {
-              Navigator.of(context).pushReplacementNamed("/map_screen");
+              Navigator.of(context).pushReplacementNamed(CropMapScreen.routeName);
             }
           ),
           buildListTitle(

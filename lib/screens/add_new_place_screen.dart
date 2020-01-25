@@ -25,11 +25,28 @@ class _AddNewPlaceScreenState extends State<AddNewPlaceScreen> {
   File _pickedImage;
   Location _pickedLocation;
 
+  void selectImage(File image) {
+    setState(() {
+      _pickedImage = image;
+      Provider.of<MyPlaces>(context).uploadPic(_pickedImage);
+    });
+  }
+
+  void selectLocation(double lat, double long) {
+    _pickedLocation = Location(
+      latitude: lat,
+      longitude: long,
+    );
+    Provider.of<MyPlaces>(context).uploadAddress(lat, long);
+  }
+
+  
+
   void _submitForm() {
     if (_cropNameController.text == null || _pickedImage == null || _pickedLocation == null) {
       return;
     }
-    Provider.of<MyPlaces>(context).addPlace(_cropNameController.text, _pickedImage, _pickedLocation);
+    Provider.of<MyPlaces>(context).addPlace(_cropNameController.text,  _pickedLocation);
     Navigator.of(context).pop();
   }
 
@@ -54,7 +71,7 @@ class _AddNewPlaceScreenState extends State<AddNewPlaceScreen> {
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(5),
                   ),
-                  labelText: "Name of the place",
+                  labelText: "Name of the crop",
                   labelStyle: TextStyle(
                     color: Theme.of(context).primaryColor,
                   ),
@@ -62,9 +79,9 @@ class _AddNewPlaceScreenState extends State<AddNewPlaceScreen> {
                 controller: _cropNameController,
               ),
               SizedBox(height: 15),
-              ImageInput(),
+              ImageInput(selectImage),
               SizedBox(height: 15),
-              LocationInput(),
+              LocationInput(selectLocation),
             ],
           ),
         ),

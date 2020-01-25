@@ -15,34 +15,32 @@ class PlaceCard extends StatelessWidget {
     return InkWell(
       onTap: () => Navigator.of(context).pushNamed(CropDetailsScreen.routeName, arguments: currentPlace.id),
       child: Card(
+        color: Colors.white54,
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(10), bottomRight: Radius.circular(10)),
+          side: BorderSide(
+            color: Theme.of(context).primaryColor,
+            width: 3,
+          )
         ),
         elevation: 10,
         child: ClipRRect(
           borderRadius: BorderRadius.circular(10),
           child: Column(
             children: <Widget>[
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(10), topRight: Radius.circular(10)),
-                ),
-                child: Image.file(currentPlace.image),
+              FadeInImage.assetNetwork(
+                placeholder: "assets/images/loading.gif",
+                image: currentPlace.imageUrl,
+                height: 205,
+                placeholderCacheHeight: 200,
+                fit: BoxFit.cover,
               ),
               Container(
-                padding: EdgeInsets.all(10),
+                padding: const EdgeInsets.only(top: 2.5, left: 10, right: 5, bottom: 2.5),
                 alignment: Alignment.centerLeft,
                 child: Text(
                   currentPlace.cropName,
                   style: Theme.of(context).textTheme.display1,
-                ),
-              ),
-              Container(
-                padding: EdgeInsets.all(10),
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  currentPlace.location.address,
-                  style: Theme.of(context).textTheme.display2,
                 ),
               ),
             ],

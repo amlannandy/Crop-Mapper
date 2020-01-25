@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import './screens/map_screen.dart';
+import './screens/crop_map_screen.dart';
 import './screens/my_geo_tags_screen.dart';
 import './screens/crop_details_screen.dart';
 import './screens/add_new_place_screen.dart';
@@ -54,6 +55,7 @@ class MyApp extends StatelessWidget {
           MapScreen.routeName : (ctx) => MapScreen(),
           AddNewPlaceScreen.routeName : (ctx) => AddNewPlaceScreen(),
           CropDetailsScreen.routeName : (ctx) => CropDetailsScreen(),
+          CropMapScreen.routeName : (ctx) => CropMapScreen(),
         },
       ),
     );

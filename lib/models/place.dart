@@ -1,5 +1,4 @@
 import 'package:flutter/foundation.dart';
-import 'dart:io';
 
 class Location {
 
@@ -20,13 +19,13 @@ class Place {
   final String id;
   final String cropName;
   final Location location;
-  final File image;
+  final String imageUrl;
 
   Place({
     @required this.id,
     @required this.cropName,
     @required this.location,
-    @required this.image,
+    @required this.imageUrl,
   });
 
 }

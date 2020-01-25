@@ -1,49 +1,79 @@
-import 'package:crop_mapping_app/widgets/custom_drawer.dart';
-import 'package:crop_mapping_app/widgets/light_button.dart';
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-import '../widgets/light_icon_button.dart';
+import '../models/place.dart';
 
-class MapScreen extends StatelessWidget {
+class MapScreen extends StatefulWidget {
 
   static const routeName = '/map_screen';
-  
+
+  final Location initialLocation;
+  final bool isSelecting;
+
+  MapScreen({
+    this.initialLocation = const Location(
+      latitude: 20.2961,
+      longitude: 85.8245,
+    ),
+    this.isSelecting = true,
+  });
+
+  @override
+  _MapScreenState createState() => _MapScreenState();
+}
+
+class _MapScreenState extends State<MapScreen> {
+
+  LatLng _pickedLocation;
+
+  void _selectLocation(LatLng position) {
+    setState(() {
+      _pickedLocation = position;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Your Geo Tags",
+          "Map",
           style: Theme.of(context).textTheme.title,
         ),
         iconTheme: IconThemeData(
           color: Colors.amber,
         ),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.save),
+            color: Theme.of(context).accentColor,
+            onPressed: _pickedLocation == null ? null :
+            () {
+              Navigator.of(context).pop(_pickedLocation);
+            },
+          )
+        ],
       ),
-      body: Container(
-        width: double.infinity,
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: <Widget>[
-              Text("Testing...", style: Theme.of(context).textTheme.display1),
-              Text("Testing...", style: Theme.of(context).textTheme.display2),
-              Text("Testing...", style: Theme.of(context).textTheme.display3),
-              Text("Testing...", style: Theme.of(context).textTheme.display4),
-              LightIconButton(
-                text: "Delete",
-                icon: Icons.delete,
-                function: () {},
-              ),
-              LightButton(
-                function: () {},
-                text: "Cancel",
-              ),
-            ],
+      body: GoogleMap(
+        initialCameraPosition: CameraPosition(
+          target: LatLng(
+            widget.initialLocation.latitude,
+            widget.initialLocation.longitude,
           ),
+          zoom: 16,
+        ),
+        onTap: widget.isSelecting ? _selectLocation : null,
+        markers: (_pickedLocation == null && widget.isSelecting) ? null : {
+          Marker(
+            markerId: MarkerId('m1'),
+            position: _pickedLocation == null ?
+              LatLng(
+                widget.initialLocation.latitude,
+                widget.initialLocation.longitude,
+              ) : _pickedLocation
+          ),
+        },
       ),
-      drawer: CustomDrawer(),
     );
   }
-
 }

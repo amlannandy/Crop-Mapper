@@ -1,9 +1,14 @@
 import 'dart:io';
-import 'package:crop_mapping_app/widgets/light_icon_button.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
+import '../widgets/light_icon_button.dart';
+
 class ImageInput extends StatefulWidget {
+
+  final Function selectImage;
+
+  ImageInput(this.selectImage);
   
   @override
   _ImageInputState createState() => _ImageInputState();
@@ -25,7 +30,20 @@ class _ImageInputState extends State<ImageInput> {
     setState(() {
       _storedImage = imageFile;
     });
-    //widget.imageFile = imageFile;
+    widget.selectImage(_storedImage);
+  }
+
+  Future _uploadPicture() async {
+    final imageFile = await ImagePicker.pickImage(
+      source: ImageSource.gallery,
+      maxWidth: 600,
+    );
+    if (imageFile == null)
+      return;
+    setState(() {
+      _storedImage = imageFile;
+    });
+    widget.selectImage(_storedImage);
   }
 
   @override
@@ -61,7 +79,7 @@ class _ImageInputState extends State<ImageInput> {
             LightIconButton(
               icon: Icons.filter,
               text: "Gallery",
-              function:  () {},
+              function:  _uploadPicture,
             ),
           ],
         )
