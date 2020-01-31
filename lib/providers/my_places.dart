@@ -24,7 +24,6 @@ class MyPlaces with ChangeNotifier {
       final response = await http.get(url);
       final extractedData = json.decode(response.body) as Map<String,dynamic>;
       final List<Place> loadedPlaces = [];
-      print(extractedData);
       extractedData.forEach((id, data) {
         loadedPlaces.add(Place(
           id: id,

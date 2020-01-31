@@ -1,8 +1,9 @@
-import 'package:crop_mapping_app/screens/crop_map_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../screens/add_new_place_screen.dart';
 import '../screens/my_geo_tags_screen.dart';
+import '../screens/chat_bot_screen.dart';
+import '../screens/crop_map_screen.dart';
 
 class CustomDrawer extends StatelessWidget {
 
@@ -57,6 +58,14 @@ class CustomDrawer extends StatelessWidget {
             context,
             () {
               Navigator.of(context).pushNamed(AddNewPlaceScreen.routeName);
+            }
+          ),
+          buildListTitle(
+            "Chat with Ramu",
+            Icon(Icons.chat, color: Theme.of(context).primaryColor, size: 50),
+            context,
+            () {
+              Navigator.of(context).pushNamed(ChatBotScreen.routeName);
             }
           ),
         ],

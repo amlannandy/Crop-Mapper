@@ -53,7 +53,8 @@ class _MyGeoTagsScreenState extends State<MyGeoTagsScreen> {
       body: Stack(
         children: <Widget>[
           Container(
-            width: double.infinity,
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
             child: Image.asset(
               "assets/images/background.jpg",
               fit: BoxFit.fill,

@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "agro-agres",
+  "private_key_id": "f3918509c490b66127d8e95c8315e4ca5468971d",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCi+pM7oc+qOcQP\nyqVxjcqCwAewQYi8jFWKxbVA7OPtGDQrEpDNyllOL9Yt450bi4BJbTzseA10Hfd2\nwh5wGXa54z4aSVLVYtX45mIkpiLZzyxR3vd5x+v83MxKYqH6YMQKbLADU/FTd38Y\nn8lGip5+/yv1y7CYSkHK4SXTum/shbrCm/PhGKM6eXTLHSmltDtEie5VpuYNqut4\nQYl0IE0ggC9fjYEEulG9VR4KpzQLbuH+o6WPDANK85tagM3aO7HFze7P0FLznAfx\n9zVLsfaxQ+SENGGLoMbV93uwN5QoP0l9pQoxJq8p3XC2nL5nc9YRFMJYEE+S0mtv\nB5cCdFe3AgMBAAECggEAFlKs9PeCWqYD4UfX5lhN+x+zTeSEBpNQKixPWb+4rmJo\nzteBpvZGyitKMknhXIL8hNImDJua+CMcoJMRGTibpvVlrbMKWfjqJufjXHK3Bk9W\nmjYofnEwNRfHEY818XXslCLz7tjCDrUo3uYP6w4UjH+F9Wo7W3icT14MUNZR+zrT\n7hvZVQ7G/slELQuhiarfwJFY1ILcHn7iImWdA5SSkUj9yUjfVnJdWSpx5WAZnwki\nzeZe4bTmAV//1o8Epc1e9tFUis7y+q8CXHDsLTRU0JMDSjEiO+ihR65q4PDm3UVs\nbxCV2lpd5Tb5sWT7dgOWIXpYDXCQDvutlvy5vXZseQKBgQDT4Pj/uplqP/JP9fRx\nx9ycJDxgq6DIWB31riifGoO/VAcZJmEduZjPuTORqHfwjtzkvU7Xo440vKzGO4/g\nhFQi7GUn0gGJNHixDDFxvCtIFUtPbKTCyxZtTi5RJcAlEbwP52hXOLTRIZ5hmZXF\nfn45+BJVPTnO14gP4F0nWPclPwKBgQDE6swi/s9NWoPdgyFCFtb/GA7iz7hw6s9D\nS7y7CBoeUoZCsNHoe2ENyVS5Squ/rr3xBQI/lG3xvYSkI1Knz8PqgO9rSPDqwORs\n6mJt3zjTLFay3CTgPpy15O/r8ic+izfQqocbdy0zcauP1lLodGa506qdl9jmA+SS\nUrlqmDdXiQKBgQDIJXiRed96MrXfOuOSp82J4eD3IKldF4AVmFLfGNjjX6jk5RBQ\nWAY2EyjXq2DBaPLZUMqtgN7QinpbN+CNofMomk5j80loJpzsAiyi17G7AgKGIIbz\nS4z/7B5soVCEs+AG1f4GhpaoBy3p3H9SdE8gy2nmA1QcRBVPig31IWE1WQKBgBoi\nd3lljCneC4ZIsw9MbLhqfv9HRllmMJ/j22aPSrgfh8YuJY3PYjAsOlxlNqo4DOmC\nGqxJjNX6qzIFpiCziHMFLcF1atQdSbPS38FpUOdmCROv+AzzAmV5vwX3m5HHdF7z\nYv8YMB2VxolOjq5fVIrxNsG3t4e/mIR7CjTFgwLRAoGAVyZzjmXNFh4JRXwZEwJY\nkLgfsIKNGUY6L+ZreJ/fPaVMz9ODL4jYhYjkBVXRWgDLkdinW966JFlkgXgxKvol\npz0vrn5dLRXxt84VcCLUpKDuhWsQ1WSeVOow+b55fuldxWcOtC3Z6s1G8XjMCp8n\njKbAbegXqHop5QfzSeUOk5Y=\n-----END PRIVATE KEY-----\n",
+  "client_email": "dialogflow-kuxifk@agro-agres.iam.gserviceaccount.com",
+  "client_id": "107156937200612763668",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dialogflow-kuxifk%40agro-agres.iam.gserviceaccount.com"
+}
