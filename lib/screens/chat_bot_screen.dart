@@ -20,6 +20,8 @@ class _ChatBotScreenState extends State<ChatBotScreen> {
   final List<Facts> messageList = <Facts>[];
   final TextEditingController _textController = new TextEditingController();
 
+  bool isEnglish = true;
+
   Widget _queryInputWidget(BuildContext context) {
     return Card(
       margin: EdgeInsets.all(10),
@@ -53,7 +55,7 @@ class _ChatBotScreenState extends State<ChatBotScreen> {
 
     _textController.clear();
     AuthGoogle authGoogle = await AuthGoogle(fileJson: "assets/chatbot.json").build();
-    Dialogflow dialogFlow = Dialogflow(authGoogle: authGoogle, language: Language.hindi);
+    Dialogflow dialogFlow = Dialogflow(authGoogle: authGoogle, language: isEnglish ? Language.english : Language.hindi);
     AIResponse response = await dialogFlow.detectIntent(query);
     Facts message = Facts(
       text: response.getMessage() ??
@@ -84,9 +86,23 @@ class _ChatBotScreenState extends State<ChatBotScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Chat with Ramu", 
+          "Ramu", 
           style: Theme.of(context).textTheme.title,
         ),
+        actions: <Widget>[
+          FlatButton(
+            child: Text(
+              isEnglish ? "English" : "हिंदी",
+              style: Theme.of(context).textTheme.display2,
+            ),
+            color: Colors.transparent,
+            onPressed: () {
+              setState(() {
+                isEnglish = !isEnglish;
+              });
+            },
+          )
+        ],
       ),
       body: Column(children: <Widget>[
         Flexible(
