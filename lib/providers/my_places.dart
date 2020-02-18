@@ -64,7 +64,6 @@ class MyPlaces with ChangeNotifier {
     } catch (error) {
       throw error;
     }
-    
 
   }
 

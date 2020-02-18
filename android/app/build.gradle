@@ -40,7 +40,7 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.crop_mapping_app"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
@@ -54,6 +54,14 @@ android {
             signingConfig signingConfigs.debug
         }
     }
+
+    aaptOptions {
+        noCompress "tflite"
+    }
+
+    // dependencies {
+    //     api 'com.google.firebase:firebase-ml-vision-image-label-model:17.0.2'
+    // }
 }
 
 flutter {
@@ -61,8 +69,10 @@ flutter {
 }
 
 dependencies {
+    
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    
 }

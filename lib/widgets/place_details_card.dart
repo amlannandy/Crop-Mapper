@@ -33,7 +33,7 @@ class PlaceDetailsCard extends StatelessWidget {
                   currentPlace.cropName,
                   style: TextStyle(
                     color: Theme.of(context).primaryColor,
-                    fontSize: 34,
+                    fontSize: 30,
                     fontFamily: "Alatsi"
                   ),
                 ),

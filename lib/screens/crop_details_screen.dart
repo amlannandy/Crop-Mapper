@@ -39,7 +39,7 @@ class CropDetailsScreen extends StatelessWidget {
             ),
           ),
           Container(
-            height: 465,
+            height: MediaQuery.of(context).size.height * 0.85,
             child: Card(
               shape: RoundedRectangleBorder(
                 side: BorderSide(

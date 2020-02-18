@@ -1,3 +1,4 @@
+import 'package:crop_mapping_app/screens/statistics_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -16,8 +17,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     
-    return ChangeNotifierProvider.value(
-      value: MyPlaces(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider.value(
+          value: MyPlaces(),
+        ),
+        // ChangeNotifierProvider.value(
+        //   value: MLProvider(),
+        // ),
+      ],
       child: MaterialApp(
         theme: ThemeData(
           primaryColor: Colors.green[900],
@@ -58,6 +66,7 @@ class MyApp extends StatelessWidget {
           CropDetailsScreen.routeName : (ctx) => CropDetailsScreen(),
           CropMapScreen.routeName : (ctx) => CropMapScreen(),
           ChatBotScreen.routeName : (ctx) => ChatBotScreen(),
+          StatisticsScreen.routeName : (ctx) => StatisticsScreen(),
         },
       ),
     );

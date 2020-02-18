@@ -18,6 +18,7 @@ class MapCard extends StatelessWidget {
           FadeInImage.assetNetwork(
               placeholder: "assets/images/loading.gif",
               image: mapImageUrl,
+              fit: BoxFit.contain,
             ),
           InkWell(
             child: Container(

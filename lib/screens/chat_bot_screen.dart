@@ -53,7 +53,7 @@ class _ChatBotScreenState extends State<ChatBotScreen> {
 
     _textController.clear();
     AuthGoogle authGoogle = await AuthGoogle(fileJson: "assets/chatbot.json").build();
-    Dialogflow dialogFlow = Dialogflow(authGoogle: authGoogle, language: Language.english);
+    Dialogflow dialogFlow = Dialogflow(authGoogle: authGoogle, language: Language.hindi);
     AIResponse response = await dialogFlow.detectIntent(query);
     Facts message = Facts(
       text: response.getMessage() ??

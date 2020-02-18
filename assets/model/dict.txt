@@ -1,0 +1,10 @@
+wheat
+mustard
+pigeon
+maize
+onion
+rice
+cauliflower
+hemp
+sunflower
+strawberry

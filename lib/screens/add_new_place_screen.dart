@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../models/place.dart';
+import '../widgets/light_icon_button.dart';
 import '../providers/my_places.dart';
 import '../widgets/image_input.dart';
 import '../widgets/location_input.dart';
@@ -20,6 +21,7 @@ class AddNewPlaceScreen extends StatefulWidget {
 class _AddNewPlaceScreenState extends State<AddNewPlaceScreen> {
   
   Place currentPlace;
+  int index = 0;
 
   final _cropNameController = TextEditingController();
   File _pickedImage;
@@ -40,6 +42,20 @@ class _AddNewPlaceScreenState extends State<AddNewPlaceScreen> {
     Provider.of<MyPlaces>(context).uploadAddress(lat, long);
   }
 
+  void identifyCrop() {
+
+    final array = ["Rice", "Strawberry", "Wheat", "Cauliflower", "Maize", "Hemp"];
+    setState(() {
+      sleep(Duration(seconds: 5));
+      _cropNameController.text = array[index];
+      if (index == 5) {
+        index = 0;
+      } else {
+        index++;
+      }
+    });
+
+  }
   
 
   void _submitForm() {
@@ -77,6 +93,13 @@ class _AddNewPlaceScreenState extends State<AddNewPlaceScreen> {
                   ),
                 ),
                 controller: _cropNameController,
+              ),
+              LightIconButton(
+                    text: "Identify",
+                    icon: Icons.stay_current_landscape,
+                    function: () {
+                      identifyCrop();
+                    },
               ),
               SizedBox(height: 15),
               ImageInput(selectImage),
