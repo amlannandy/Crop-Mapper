@@ -1,6 +1,6 @@
-# crop_mapping_app
+# Agro-Acres - A Crop Mapping App
 
-A new Flutter project.
+An app made using the Flutter framework which uses a Machine Learning Algorithm to identify Crop Fields and geo tag them onto a map to create a sophisticated mapping system for studying Crop diversity and Soil Characteristics in a region
 
 ## Getting Started
 
