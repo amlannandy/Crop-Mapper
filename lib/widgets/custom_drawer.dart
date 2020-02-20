@@ -1,8 +1,9 @@
-import 'package:crop_mapping_app/screens/statistics_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../screens/add_new_place_screen.dart';
 import '../screens/my_geo_tags_screen.dart';
+import '../screens/home_screen.dart';
+import '../screens/statistics_screen.dart';
 import '../screens/chat_bot_screen.dart';
 import '../screens/crop_map_screen.dart';
 
@@ -38,6 +39,14 @@ class CustomDrawer extends StatelessWidget {
           ),
           SizedBox(height: 10),
           buildListTitle(
+            "Home",
+            Icon(Icons.home, color: Theme.of(context).primaryColor, size: 50),
+            context,
+            () {
+              Navigator.of(context).pushNamed(HomeScreen.routeName);
+            }
+          ),
+          buildListTitle(
             "My Tags",
             Icon(Icons.supervised_user_circle, color: Theme.of(context).primaryColor, size: 50),
             context,
@@ -70,7 +79,7 @@ class CustomDrawer extends StatelessWidget {
             }
           ),
           buildListTitle(
-            "Statisctics",
+            "Statistics",
             Icon(Icons.format_align_right, color: Theme.of(context).primaryColor, size: 50),
             context,
             () {

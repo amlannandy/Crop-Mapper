@@ -32,6 +32,10 @@ class _MapScreenState extends State<MapScreen> {
     });
   }
 
+  void viewPopUp() {
+    
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -70,7 +74,10 @@ class _MapScreenState extends State<MapScreen> {
               LatLng(
                 widget.initialLocation.latitude,
                 widget.initialLocation.longitude,
-              ) : _pickedLocation
+              ) : _pickedLocation,
+              onTap: () {
+                viewPopUp();
+              }
           ),
         },
       ),
